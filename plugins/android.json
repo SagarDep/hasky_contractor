@@ -1,0 +1,106 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-android-support-gradle-release": {
+      "ANDROID_SUPPORT_VERSION": "27.0.0",
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-document-viewer": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-googleplus": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-ios-decimal-keyboard": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-sign-in-with-apple": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-telerik-imagepicker": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "hasky.contractor.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-enable-multidex": {
+      "PACKAGE_NAME": "hasky.contractor.app"
+    },
+    "cordova-plugin-firebasex": {
+      "FIREBASE_ANALYTICS_COLLECTION_ENABLED": "true",
+      "FIREBASE_PERFORMANCE_COLLECTION_ENABLED": "true",
+      "FIREBASE_CRASHLYTICS_COLLECTION_ENABLED": "true",
+      "ANDROID_ICON_ACCENT": "#FF00FFFF",
+      "ANDROID_PLAY_SERVICES_TAGMANAGER_VERSION": "17.0.0",
+      "ANDROID_PLAY_SERVICES_AUTH_VERSION": "18.0.0",
+      "ANDROID_FIREBASE_ANALYTICS_VERSION": "17.4.3",
+      "ANDROID_FIREBASE_MESSAGING_VERSION": "20.2.1",
+      "ANDROID_FIREBASE_CONFIG_VERSION": "19.1.4",
+      "ANDROID_FIREBASE_PERF_VERSION": "19.0.7",
+      "ANDROID_FIREBASE_AUTH_VERSION": "19.3.1",
+      "ANDROID_FIREBASE_INAPPMESSAGING_VERSION": "19.0.7",
+      "ANDROID_FIREBASE_FIRESTORE_VERSION": "21.4.3",
+      "ANDROID_FIREBASE_CRASHLYTICS_VERSION": "17.0.1",
+      "ANDROID_FIREBASE_CRASHLYTICS_NDK_VERSION": "17.0.1",
+      "ANDROID_GSON_VERSION": "2.8.6",
+      "PACKAGE_NAME": "hasky.contractor.app"
+    }
+  }
+}

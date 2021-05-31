@@ -1,0 +1,100 @@
+<ion-content padding>
+  <div>
+    <div [hidden]="step1">
+      <div class="ion-text-center ion-text-wrap">
+        <h2>Add at least one reference.</h2>
+      </div><br>
+    <form [formGroup]="singup">
+        <ion-item mode="md" color="dark" >
+          <ion-label position="stacked" color="light"
+            >Company's name that you worked for <ion-text></ion-text
+          ></ion-label>
+          <ion-input
+            formControlName="last_company"
+            type="text"
+            color="light"
+          ></ion-input>
+        </ion-item><br>
+        <ion-item mode="md" color="dark" [ngClass]="require">
+          <ion-label position="stacked" color="light"
+            >Employer or manager's name <ion-text></ion-text
+          ></ion-label>
+          <ion-input
+          formControlName="manager_name"
+            type="text"
+            color="light"
+          ></ion-input>
+        </ion-item>
+        <br>
+        <ion-item mode="md" color="dark">
+          <ion-label position="stacked" color="light"
+            >Employer or manager's title <ion-text></ion-text
+          ></ion-label>
+          <ion-input
+            formControlName="manager_position"
+            type="text"
+            color="light"
+          ></ion-input>
+        </ion-item>
+        <br>
+        <ion-item mode="md" color="dark">
+          <ion-label position="stacked" color="light"
+            >Employer or manager's contact # <ion-text></ion-text
+          ></ion-label>
+          <ion-input
+          formControlName="manager_phone"
+            type="tel"
+            color="light"
+          ></ion-input>
+        </ion-item><br>
+        <ion-item mode="md" color="dark">
+          <ion-label position="stacked" color="light"
+            >Position you worked in?
+            <ion-text></ion-text
+          ></ion-label>
+          <ion-input
+          formControlName="position_finish"
+            type="text"
+            color="light"
+          ></ion-input>
+        </ion-item>
+      </form>
+     <br>
+     <input  id="file" type="file" (change)="onFileSelected($event)" />
+    <label for="file" > Upload document (Optional)</label>
+    
+    </div>
+    <div [hidden]="step2" >
+      <div class="ion-text-center ion-text-wrap">
+        <h2>Add your direct deposit info, It is required to receive the payment.</h2>
+      </div><br>
+      <ion-button expand="block" class="ion-text-wrap" (click)="addPayment()">
+        ADD PAYMENT METHOD
+      </ion-button>
+    </div>
+  </div>
+  </ion-content>
+  
+  <ion-footer no-border lines="no-line" [hidden]="step1">
+    <ion-toolbar color="dark" no-border lines="no-line">
+      <ion-button
+      color="success"
+      slot="start"
+      style="margin-left: 18px;"
+      (click)="back()"
+    >
+    back
+    </ion-button>
+    <ion-button
+    color="success"
+    slot="end"
+    style="margin-right: 18px;"
+    [disabled]="!singup.valid"
+    (click)="addReferences()"
+  >
+  next
+  </ion-button>
+  
+    </ion-toolbar>
+  </ion-footer>
+  

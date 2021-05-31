@@ -1,0 +1,95 @@
+<app-header tittle="{{language.title}}"></app-header>
+
+<ion-content padding>
+  <div class="ion ion-text-center">
+    <img id="output" [class]="mostrar"/>
+  </div>
+  <ion-card color="dark">
+    
+    <ion-card-content>
+        <ion-row size="12">
+          <div style="width: 100%; text-align: center !important;">
+            <input  id="file" type="file"  accept="image/*" (change)="onFileSelected($event)" />
+              <label for="file" > Upload Image</label>
+          </div>
+          </ion-row>
+          <ion-row size="12"> 
+              <ion-col size="12">
+                <ion-button expand="full" (click)="uploadPicture()" [disabled]="disable">{{language.save}}</ion-button>
+              </ion-col>
+          </ion-row>
+          <ion-label color="danger" *ngIf="image">{{language.image}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="dark">
+    <ion-card-content>
+        <form [formGroup]="singup">
+    <ion-item mode="md" color="dark" lines="none">
+      <ion-label position="stacked" color="light"
+        >{{language.name}} <ion-text></ion-text
+          > </ion-label>
+     <ion-input color="light" required formControlName="name"  [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item mode="md" color="dark" lines="none">
+        <ion-label position="stacked" color="light"
+          >{{language.description}} <ion-text></ion-text
+            > </ion-label>
+       <ion-input color="light" required formControlName="description" [(ngModel)]="description" ></ion-input>
+    </ion-item>
+    <ion-item mode="md" color="dark" lines="none">
+        <ion-label position="stacked" color="light"
+          >{{language.phone}} <ion-text></ion-text
+            > </ion-label>
+       <ion-input color="light" required formControlName="phone_number" type="tel" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+    <ion-item mode="md" color="dark" lines="none">
+        <ion-label position="stacked" color="light"
+          >{{language.email}} <ion-text></ion-text
+            > </ion-label>
+       <ion-input color="light" required required formControlName="email" type="email" [(ngModel)]="email" ></ion-input>
+    </ion-item>
+    <ion-item mode="md" color="dark" lines="none">
+        <ion-label position="stacked" color="light"
+          >{{language.rfc}} <ion-text></ion-text
+            > </ion-label>
+       <ion-input color="light" required formControlName="rfc" [(ngModel)]="rfc"></ion-input>
+    </ion-item>
+    <ion-item mode="md" color="dark" lines="none">
+        <ion-label position="stacked" color="light"
+          >{{language.rs}}<ion-text></ion-text
+            > </ion-label>
+       <ion-input color="light" required formControlName="rs" [(ngModel)]="rs"></ion-input>
+    </ion-item>
+        </form>
+        <ion-item mode="md" color="dark" lines="none"> 
+            <ion-label position="stacked" color="light"
+              >{{language.address}}<ion-text></ion-text
+            ></ion-label>
+            <ion-input required type="text" color="light" placeholder="{{address}}" #addres [(ngModel)]="autocomplete.input"   (ionInput)="updateSearchResults($event)" ></ion-input>
+          </ion-item>
+
+
+          <ion-list [hidden]="autocompleteItems.length == 0" style="height: 200px;"> 
+              <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+                <ion-label color="light"> {{ item.description }}</ion-label>
+              </ion-item>
+            </ion-list>
+    <ion-button (click)="save()" expand="block" >save</ion-button>
+
+  </ion-card-content>
+  
+  </ion-card>
+</ion-content>
+<ion-footer no-border lines="no-line">
+  <ion-toolbar color="dark" no-border lines="no-line">
+    <ion-button
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;"
+     
+      (click)="back()"
+    >
+     back
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

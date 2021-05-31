@@ -1,0 +1,197 @@
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <ion-title>{{language.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="dark" *ngIf="info">
+    <ion-card-content>
+      <ion-list style="background-color: #222428; ">
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.experience}}
+          </ion-label>
+          <ion-input
+            slot="end"
+            color="light"
+            readonly
+            [(ngModel)]="experience"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.quantity}}
+          </ion-label>
+          <ion-input
+            slot="end"
+            color="light"
+            readonly
+            [(ngModel)]="quantity_workers"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.start}}
+          </ion-label>
+          <ion-input
+            slot="end"
+            color="light"
+            readonly
+            [(ngModel)]="start_date"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.end}}
+          </ion-label>
+          <ion-input
+            slot="end"
+            color="light"
+            readonly
+            [(ngModel)]="end_date"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.time}}</ion-label
+          >
+          <ion-input
+            slot="end"
+            color="light"
+            readonly
+            [(ngModel)]="start_time"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.etime}}</ion-label
+          >
+          <ion-input
+            slot="end"
+            color="light"
+            readonly
+            [(ngModel)]="end_time"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            position="fixed"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.task}}
+          </ion-label>
+          <ion-textarea
+            slot="end"
+            color="light"
+            readonly
+            class="ion-text-wrap"
+            [(ngModel)]="task"
+            style="padding-left: 25px;
+                        "
+          >
+          </ion-textarea>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label
+            style="font-size: 12px;"
+            color="light"
+            class="ion-text-wrap"
+            >{{language.weekdays}}</ion-label
+          >
+        </ion-item>
+        <ion-chip color="secondary" *ngFor="let data of days">
+          <ion-label color="light" class="ion-text-wrap">{{data}}</ion-label>
+        </ion-chip>
+      </ion-list>
+      <ion-button (click)="deleteRequet()" color="danger"  *ngIf="disable">{{language.delete}}</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <div style=" width: 100%;
+  text-align: center; ">
+                  <div class="ion-text-center request">
+                          <h3 style="
+                          margin-top: 0px;
+                          margin-bottom: 0px;
+                          color: white;
+                      ">{{language.workers}}</h3>
+                  </div>
+  </div>
+  <div>
+    <div *ngFor="let data of wor">
+      <ion-card color="dark" *ngIf="data.notification_accepted == '1' ">
+        <ion-card-content >
+
+            <ion-row>
+              <ion-col size="4">
+                <ion-avatar *ngIf="data.user.profile_image == undefined">
+                  <img src="../../../../assets/usuario.png" />
+                </ion-avatar>
+                <ion-avatar *ngIf="data.user.profile_image != undefined" size="large">
+                  <img
+                    src="https://api.haskyconnections.com/uploads/{{data.user.profile_image}}"
+                  />
+                </ion-avatar>
+              </ion-col>
+              <ion-col size="6">
+                <h2> {{data.user.first_name}} {{data.user.last_name}}   </h2>
+                <br>
+                <ion-button (click)="openWorker(data.user.id, data.user_accepted)">{{language.profile}}</ion-button>
+                <ion-button (click)="openChat(data.user)">Chat</ion-button>
+                <br>
+
+               <ion-chip (click)="stripe()" *ngIf="data.user_accepted == '1' && data.canceled == '0' " style="background-color: green; color: white;">
+                <ion-icon style="color: white; margin: 0;" name="cash"></ion-icon>
+              </ion-chip>
+
+
+               <ion-chip *ngIf="data.user_accepted == '0' && data.canceled == '0' " style="background-color: white;">{{language.pending}}</ion-chip>
+               <ion-chip *ngIf="data.user_accepted == '1' && data.canceled == '0' " style="background-color: green; color: white;">{{language.accepted}}</ion-chip>
+               <ion-chip *ngIf="data.user_accepted == '0' && data.canceled == '1' " style="background-color: #E51010; color: white;">{{language.canceled}}</ion-chip>
+              </ion-col>
+            </ion-row>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  
+  <!-- fab placed to the top end -->
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="viewFlat == 'active'" (click)="stripe()">
+    <ion-fab-button color="success">
+      <ion-icon name="cash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+</ion-content>

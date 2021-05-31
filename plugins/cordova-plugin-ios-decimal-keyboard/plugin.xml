@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-ios-decimal-keyboard" version="1.0.1">
+    <name>iOS Decimal Keyboard</name>
+    <description>An addition of a decimal (period) button to the numeric / +tel input keyboard.</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,keyboard,decimal</keywords>
+    <js-module src="www/decimal-keyboard.js" name="decimalKeyboard">
+    	<clobbers target="window.DecimalKeyboard" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DecimalKeyboard">
+                <param name="ios-package" value="CDVDecimalKeyboard" onload="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVDecimalKeyboard.h" />
+        <source-file src="src/ios/CDVDecimalKeyboard.m" />
+    </platform>
+</plugin>

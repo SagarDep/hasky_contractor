@@ -1,0 +1,16 @@
+<ion-header  no-border style="background-color: white;">
+    <ion-toolbar style="background-color: white;">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons> 
+    </ion-toolbar>
+  </ion-header>
+<ion-content >
+    <ion-slides style="width: 100%; height: 100%;" [options]="op">
+        <ion-slide>
+            <ion-button size="large" expand="full" fill="outline" shape="round" (click)="openQr()">
+                {{language.scan}}
+            </ion-button>
+        </ion-slide>
+    </ion-slides>
+</ion-content> 

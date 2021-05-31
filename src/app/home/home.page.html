@@ -1,0 +1,76 @@
+<ion-content class="login-content" padding color="dark">
+  <ion-list no-border color="dark">
+    <ion-list-header color="dark"></ion-list-header>
+
+    <ion-select
+      placeholder="{{ language.language }}"
+      (ionChange)="changeLanguage()"
+      [(ngModel)]="lan"
+      color="dark"
+      class="selector"
+    >
+      <ion-select-option value="en">English</ion-select-option>
+      <ion-select-option value="es">Spanish</ion-select-option>
+    </ion-select>
+  </ion-list>
+  <div text-center>
+    <img width="160" height="160" src="../../../assets/icon/haskycontractor.png" />
+    <br /><br /><br /><br />
+
+    <ion-item style="border-radius: 12px;">
+    <ion-input
+      type="email"
+      class="txt"
+      placeholder="{{ language.email }}"
+      [(ngModel)]="email"
+    >  
+  </ion-input>  
+</ion-item>
+    <br /><br />
+    <ion-item style="border-radius: 12px;">
+    <ion-input 
+      [type]="passwords"
+      class="txt"
+      placeholder="{{ language.password }}"
+      [(ngModel)]="password"
+    >
+    </ion-input>
+    <ion-icon *ngIf="valor == 0" name="eye" color="dark" (click)="viewPassword()"></ion-icon>
+    <ion-icon *ngIf="valor == 1" name="eye-off" color="dark" (click)="viewPassword()"></ion-icon>
+  </ion-item>
+  </div>
+  <ion-button
+    class="log-in-button"
+    color="success"
+    expand="block"
+    (click)="Login()"
+  >
+    {{ language.login }}
+  </ion-button>
+
+  <div class="texto" *ngIf="platform.is('android')">
+    ---------- {{language.or}} ----------
+  </div>
+  <div style="padding-top: 10px;">
+    
+    <div class="flex-c p-b-112">
+      <ion-fab-button color="light" (click)="doGoogleLogin()" *ngIf="platform.is('android')"> <img src="./assets/email.png" width="40" alt=""></ion-fab-button>
+      <ion-fab-button color="light" (click)="doGoogleApple()" hidden> <img src="./assets/aplicacion.png" width="40" alt=""></ion-fab-button>
+    </div>
+   
+  </div>
+  <div class="texto">
+    {{ language.account }}
+    <strong
+      ><a (click)="signup()">{{ language.create }}</a></strong
+    >
+  </div>
+  <div class="texto">
+    
+    <strong
+      ><a (click)="passwordf()">{{language.forgot}}</a></strong
+    >
+  </div>
+  <br>
+  
+</ion-content>

@@ -1,0 +1,89 @@
+<app-header tittle="{{language.title}}"></app-header>
+<ion-content>
+  
+              <ion-card color="dark" mode="md">
+                <ion-card-content>
+                  <ion-row size="12">
+                    <ion-col size="4" style="width: 80% !important">
+                      <div class="image-upload">
+                        <label for="file-input">
+                          <ion-avatar  style="width: 110px !important; height: 110px !important;">
+                            <img src="https://api.haskyconnections.com/uploads/{{profile}}"  style="background-size:auto;"/>
+                           
+                          </ion-avatar>
+                        </label>
+                      
+                        <input id="file-input" type="file" accept="image/*" (change)="onFileSelected($event)"/>
+                      </div>
+                    </ion-col>
+                    <ion-col size="8" style="padding-left: 40px;">
+                      <h2 class="ion-text-wrap">{{firts}} {{last}}</h2>
+                     
+                          <ionic4-star-rating #rating
+                          activeIcon = "ios-star"
+                          defaultIcon = "ios-star-outline" 
+                          activeColor = "#05b7d7"
+                          defaultColor = "#aaaaaa"
+                          readonly = "false"
+                          rating = "{{va}}"
+                          fontSize = "32px"
+                          >
+                      </ionic4-star-rating>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            
+  <ion-card color="dark">
+    <ion-card-content>
+        <div class="ion-text-center ion-text-wrap">
+            <h2>{{language.company}}</h2>
+        </div>
+        <ion-item color="dark" lines="none" (click)="editCompany()">
+            <ion-avatar slot="start">
+                <img src="https://api.haskyconnections.com/uploads/{{companyImage}}" />
+            </ion-avatar>
+            <ion-label>{{names}}</ion-label>
+            <ion-icon name="create" slot="icon-only" color="light" slot="end"></ion-icon>
+        </ion-item>          
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="dark">
+        <ion-card-content>
+                <div class="ion-text-center ion-text-wrap">
+                        <h2>{{language.personal}}</h2>
+                    </div>
+                    <ion-item color="dark" lines="none" (click)="editUser()">
+                            <ion-icon name="mail" slot="icon-only" color="light" slot="start"></ion-icon>
+                        <ion-label>{{email}}</ion-label>
+                        <ion-icon name="create" slot="icon-only" color="light" slot="end"></ion-icon>
+                    </ion-item>
+                    <ion-item color="dark" lines="none">
+                            <ion-icon name="call" slot="icon-only" color="light" slot="start"></ion-icon>
+                        <ion-label>{{phone}}</ion-label>
+                        
+                    </ion-item>   
+        </ion-card-content>
+    </ion-card>
+    <ion-card color="dark">
+      <ion-card-content>
+          <div class="ion-text-center ion-text-wrap">
+              <h2>{{language.documents}}</h2>
+          </div>
+          <ion-item color="dark" lines="none" (click)="documents()">
+        <ion-icon name="create" slot="icon-only" color="light" slot="end"></ion-icon>
+          </ion-item>
+          <ion-item *ngFor="let data of document; let i = index" color="dark" lines ="none" >   
+            <ion-button slot="" >{{language.document}} - {{i+1}}</ion-button>
+          <!--- <ion-button slot="end" class="ion-text-wrap" (click)="download(data.document)">{{language.view}}</ion-button> -->
+          <!---   <ion-button class="ion-text-wrap" (click)="pruebadownload(data.document)">{{language.view}}</ion-button>-->
+            <a class="btn" [href]="'https://api.haskyconnections.com/uploads/' + data.document">{{language.view}}</a>
+            <ion-button slot="end" color="danger" (click)="deleteDocument(data.id)"><ion-icon name="trash"></ion-icon></ion-button>
+          </ion-item>
+          
+              
+      </ion-card-content>
+  </ion-card>
+
+</ion-content>
+  

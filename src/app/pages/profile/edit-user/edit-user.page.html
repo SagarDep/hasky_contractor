@@ -1,0 +1,65 @@
+<app-header tittle="{{language.title}}"></app-header>
+
+<ion-content>
+    
+    <ion-card color="dark">
+        <ion-card-content>
+        <ion-item mode="md" color="dark" lines="none">
+          <ion-label position="stacked" color="light"
+            >{{language.fname}}<ion-text></ion-text
+              > </ion-label>
+         <ion-input color="light" [(ngModel)]="name" ></ion-input>
+        </ion-item>
+        <ion-item mode="md" color="dark" lines="none">
+            <ion-label position="stacked" color="light"
+              >{{language.lname}}<ion-text></ion-text
+                > </ion-label>
+           <ion-input color="light" [(ngModel)]="last" required ></ion-input>
+        </ion-item>
+        <ion-item mode="md" color="dark" lines="none">
+            <ion-label position="stacked" color="light"
+              >{{language.email}}<ion-text></ion-text
+                > </ion-label>
+           <ion-input color="light" [(ngModel)]="email" readonly></ion-input>
+        </ion-item>
+        <ion-item mode="md" color="dark" lines="none">
+            <ion-label position="stacked" color="light"
+              >{{language.phone}}<ion-text></ion-text
+                > </ion-label>
+           <ion-input color="light" [(ngModel)]="phone" type="tel" readonly required ></ion-input>
+        </ion-item>
+        <ion-item mode="md" color="dark" lines="none"> 
+          <ion-label position="stacked" color="light"
+            >{{language.address}} <ion-text></ion-text
+          ></ion-label>
+          <ion-input required type="text" color="light" placeholder="{{address}}" #addres [(ngModel)]="autocomplete.input"   (ionInput)="updateSearchResults($event)" ></ion-input>
+        </ion-item>
+
+ 
+        <ion-list [hidden]="autocompleteItems.length == 0" style="height: 200px;"> 
+            <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+              <ion-label color="light"> {{ item.description }}</ion-label>
+            </ion-item>
+          </ion-list>
+        <ion-button (click)="save()" expand="block">{{language.save}}</ion-button>
+      </ion-card-content>
+      
+      </ion-card>
+     
+
+</ion-content> 
+
+<ion-footer no-border lines="no-line">
+  <ion-toolbar color="dark" no-border lines="no-line">
+    <ion-button
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;"
+     
+      (click)="back()"
+    >
+     back
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+

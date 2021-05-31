@@ -1,0 +1,26 @@
+<ion-header no-border colo="dark">
+  <ion-toolbar color="dark">
+    <ion-title>documents</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="dark">
+  <ion-card color="dark">
+    <ion-card-content>
+      <ion-row size="12">
+        <div style="width: 100%; text-align: center !important;">
+          <input  id="file" type="file" (change)="onFileSelected($event)" />
+            <label for="file" > Upload document</label>
+        </div><br>
+        <div style="width: 100%; text-align: center !important; color: white;" >{{nombreArchivo}}</div>
+      </ion-row>
+      <ion-row size="12"> 
+          <ion-col size="6">
+            <ion-button expand="full" (click)="saveDocument()">save</ion-button>
+          </ion-col>
+          
+      </ion-row>
+    </ion-card-content>
+  </ion-card> 
+</ion-content>

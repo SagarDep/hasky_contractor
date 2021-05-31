@@ -1,0 +1,141 @@
+<ion-header color="dark" no-boerder>
+                <ion-toolbar color="dark">
+                  <ion-title>{{language.title}}</ion-title>
+                  <ion-buttons slot="start">
+                    <ion-button>
+                      <ion-back-button></ion-back-button>
+                    </ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+              </ion-header>
+
+<ion-content>
+    
+   
+      <ion-card style="background-color:#222428;" >
+                <ion-card-content>
+                        <ion-item lines="none">
+                                <ion-label slot="start" color="light">{{names}}</ion-label>
+                                <ion-icon name="settings" color="light" (click)="viewEdit()" slot="end" [hidden]="edit"> </ion-icon>
+                                <ion-icon name="close" color="light" (click)="closeEdit()" slot="end" [hidden]="info" > </ion-icon>
+                        </ion-item>
+                    <ion-list style="background-color: #222428; ">
+                        <ion-item mode="md">
+                                <ion-label position="stacked" color="light"
+                                > {{language.name}} <ion-text></ion-text
+                                > </ion-label>
+                                <ion-input color="light" [(ngModel)]="names" [readonly]="info"></ion-input>
+                        </ion-item>
+                        
+                        <ion-item mode="md">
+                                <ion-label position="stacked" color="light"
+                                >{{language.address}} <ion-text></ion-text
+                                > </ion-label>
+                                <ion-input required type="text" color="light" #addres placeholder="{{address}}" (ionInput)="updateSearchResults($event)" [readonly]="info"></ion-input>
+                        </ion-item>
+                        <ion-list [hidden]="autocompleteItems.length == 0" style="height: 200px;"> 
+                            <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)" >
+                              <ion-label color="light"> {{ item.description }}</ion-label>
+                            </ion-item>
+                          </ion-list>
+                 
+                        <ion-item mode="md">
+                                <ion-label position="stacked" color="light"
+                                >{{language.supervisor}} <ion-text></ion-text
+                                > </ion-label>
+                                <ion-input color="light"   [(ngModel)]="supervisor_name" [readonly]="info"></ion-input>
+                                </ion-item>
+                        <ion-item mode="md">
+                                <ion-label position="stacked" color="light" 
+                                >{{language.phone}} <ion-text></ion-text 
+                                > </ion-label>
+                                <ion-input color="light" type="tel" [(ngModel)]="supervisor_phone" [readonly]="info"></ion-input>
+                        </ion-item>
+                        <ion-item mode="md">
+                                <ion-label position="stacked" color="light"
+                                >{{language.description}} <ion-text></ion-text
+                                > </ion-label>
+                                <ion-textarea color="light"  [(ngModel)]="decription" [readonly]="info" [readonly]="info"></ion-textarea>
+                        </ion-item>
+                        <ion-item mode="md">
+                                <ion-label color="light">{{language.breaktime}}</ion-label>
+                                <ion-select placeholder="{{break}}" color="light" [(ngModel)]="idBrak" >
+                                <ion-select-option *ngFor="let time of Times"  value="{{time.id}}"  >{{time.description}}</ion-select-option>
+                                </ion-select>
+                        </ion-item>
+                        <ion-item mode="md">
+                                <ion-label color="light">{{language.bpaid}}</ion-label>
+                                <ion-select placeholder="{{paid}}" color="light" [(ngModel)]="idPaid">
+                                <ion-select-option *ngFor="let time of Times"  value="{{time.id}}">{{time.description}}</ion-select-option>
+                                </ion-select>
+                        </ion-item> 
+                    </ion-list><br>
+                    
+                    <ion-row size="12">
+                        <ion-col size="6">
+                               <ion-button (click)="deleteProject()" expand="block" color="danger" [hidden]="info">{{language.delete}}</ion-button>
+                        </ion-col>
+                        <ion-col size="6">
+                                <ion-button  (click)="save()" expand="block" [hidden]="info">{{language.save}}</ion-button>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row size="12" >
+                        <ion-col size="6">
+                               <ion-button (click)="activateProject()" expand="block" class= ion-text-wrap *ngIf="satatus == 'pending'">{{language.activate}}</ion-button>
+                        </ion-col>
+                        <ion-col size="6">
+                                <ion-button  (click)="doneProject()" expand="block" color="success"class= ion-text-wrap *ngIf="satatus == 'active'">{{language.finish}}</ion-button>
+                        </ion-col>
+                    </ion-row>
+                               
+                </ion-card-content>
+              </ion-card>
+
+              <div *ngIf="pageRequest">
+                        <div style=" width: 100%;
+                        text-align: center; ">
+                                        <div class="ion-text-center request">
+                                                <h3 style="
+                                                margin-top: 0px;
+                                                margin-bottom: 0px;
+                                                color: white;
+                                            ">{{language.request}}</h3>
+                                        </div>
+                        </div>
+                        <div  *ngFor="let data of requestWorker">
+                                <ion-card color="dark" *ngIf="data.status !='canceled'" >
+                                        <ion-card-content>
+                                                  <ion-item lines="none"> 
+                                                        <ion-label class="ion-text-center" color="light">{{language.task}}</ion-label><br>
+                                                       
+                                                        <ion-icon name="settings" color="light" (click)="editWorkers(data.id)" slot="end" > </ion-icon>
+                                                  </ion-item>
+                                                  <ion-item lines="none">
+                                                                  <ion-label color="light">{{data.task}}</ion-label> 
+                                                  </ion-item>
+                                                  <ion-item lines="none">
+                                                          <ion-label color="light"> {{language.experience}} {{data.experience}}</ion-label>
+                                                  </ion-item>
+                                                  <ion-item lines="none">
+                                                          <ion-label color="light"> {{language.quantity}} {{data.quantity_workers}}</ion-label>
+                                                  </ion-item>
+                                                  <ion-item lines="none">
+                                                          <ion-label color="light"> Name trade: {{data.trade.name}} </ion-label>
+                                                  </ion-item>
+                                                  <ion-item lines="none">
+                                                          <ion-label color="light"> {{language.status}} </ion-label>
+                                                          <ion-chip color="light">
+                                                                          {{data.status}}
+                                                          </ion-chip>
+                                                  </ion-item>
+
+                                                <!-- <ion-button (click)="stripe(data.id)" expand="block" *ngIf="data.status == 'active'" color="success">
+                                                        <ion-icon name="cash"></ion-icon>
+                                                </ion-button> -->
+  
+                                        </ion-card-content>
+                                </ion-card>
+                        </div>
+             </div>
+</ion-content>
+ 

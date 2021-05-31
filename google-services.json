@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "1046018721855",
+    "firebase_url": "https://chat-app-4ec10.firebaseio.com",
+    "project_id": "chat-app-4ec10",
+    "storage_bucket": "chat-app-4ec10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046018721855:android:265c021055641ba9aa508a",
+        "android_client_info": {
+          "package_name": "hasky.contractor.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046018721855-ldb6vfeen2l5jj2ebuodtib2i3d33io7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3zyhAevzbXlYJy7G_thLxuFS9gPAKLrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046018721855-ldb6vfeen2l5jj2ebuodtib2i3d33io7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1046018721855-mlcfkvjllui0i3eciao20dh4mcs7fs3k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "hasky.contractor.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046018721855:android:957980c3d31b3cc5aa508a",
+        "android_client_info": {
+          "package_name": "hasky.worker.araconsultoriaydesarrollos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046018721855-ldb6vfeen2l5jj2ebuodtib2i3d33io7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3zyhAevzbXlYJy7G_thLxuFS9gPAKLrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046018721855-ldb6vfeen2l5jj2ebuodtib2i3d33io7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1046018721855-mlcfkvjllui0i3eciao20dh4mcs7fs3k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "hasky.contractor.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

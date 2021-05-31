@@ -1,0 +1,45 @@
+<app-header tittle="{{language.title}}"></app-header>
+<ion-content padding>
+  <div *ngIf="!data" class="animated fadeIn fast" >
+  <ion-list> 
+    <ion-list-header >
+      <h3 style="color: white;">Projects</h3>
+    </ion-list-header>
+    <div *ngFor="let data of  proje" >
+    <ion-item style="height: auto;" (click)="addWorker(data.id, data.typeProject)" *ngIf="data.status=='pending'">
+      <ion-label color="light" class="ion-text-wrap">
+        {{data.name}}
+      </ion-label>
+      
+      <ion-icon name="arrow-forward" slot="end" color="light" ></ion-icon>
+    </ion-item>
+  </div>
+  </ion-list>
+</div>
+
+  <div >
+    <ion-list *ngIf="data" class="animated fadeIn fast" > 
+      <div *ngFor="let o of  proje" >
+      <ion-item style="height: auto;" *ngIf="o.status=='pending'">
+        <ion-skeleton-text animated  style="width: 50%;"></ion-skeleton-text>
+        <ion-icon name="arrow-forward" slot="end" color="light" ></ion-icon>
+      </ion-item>
+    </div>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer no-border lines="no-line">
+  <ion-toolbar color="dark" no-border lines="no-line">
+    <ion-button
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;"
+     
+      (click)="back()"
+    >
+     back
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+

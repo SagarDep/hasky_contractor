@@ -1,0 +1,53 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header no-border>
+    <ion-toolbar>
+      <div text-center>
+        <img
+          src="../../../assets/icon/handy6.png"
+          style="padding-top: 45px; padding-bottom: 45px;"
+          width="200"
+        />
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content no-border>
+    <ion-list lines="none">
+
+      <ion-item lines="none" (click)="projects()">
+        <ion-label>
+          {{ language.projects }}
+        </ion-label>
+        <ion-icon name="hammer" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" (click)="notifications()">
+        <ion-label>
+          {{ language.notification }}
+        </ion-label>
+        <ion-icon name="notifications" slot="start">
+        </ion-icon>
+        <ion-badge *ngIf="leido == false || showNotificationBadge" color="danger" slot="end">
+          <div style="height: 5px; float: left;"></div>
+        </ion-badge>
+      </ion-item>
+      <ion-item lines="none" (click)="profile()">
+        <ion-label>
+          {{ language.profile }}
+        </ion-label>
+        <ion-icon name="person" slot="start"></ion-icon>
+      </ion-item>
+
+      <ion-item lines="none" (click)="viewQr()" *ngIf="email">
+        <ion-label>
+          {{language.qr}}
+        </ion-label>
+        <ion-icon name="qr-scanner" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" (click)="back()">
+          <ion-label>
+            {{ language.back }}
+          </ion-label>
+          <ion-icon name="power" slot="start"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

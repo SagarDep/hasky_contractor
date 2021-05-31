@@ -1,0 +1,51 @@
+ion-content {
+  --ion-background-color: #333232;
+}
+ion-list {
+  background: var(--ion-item-background, var(--ion-background-color, #222428));
+}
+
+.fixedLabel {
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+ion-skeleton-text {
+  --background-rgb: 255,255,255;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.fast {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+}

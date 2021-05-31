@@ -1,0 +1,78 @@
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card mode="md" color="dark"> 
+    <ion-list>
+      <ion-item>
+        <ion-label color="light">Start Date</ion-label>
+        <ion-datetime  placeholder="Select Date" style="color: white;" pickerFormat="YYYY MM DD" [(ngModel)]="startDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label color="light">End Date</ion-label>
+        <ion-datetime  placeholder="Select Date" style="color: white;" pickerFormat="YYYY MM DD" [(ngModel)]="endDate"></ion-datetime>
+      </ion-item>
+      <div class="ion-text-center"><br>
+        <ion-button expand="block" color="success" (click)="searchPay()" ><h5>Payment Week</h5></ion-button>
+      </div>
+    </ion-list>
+      
+
+  </ion-card>
+  <ion-card mode="md" color="dark"> 
+    <div class="ion-text-center">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>Total Hours: {{total_hours}} </div>
+          </ion-col>
+          <ion-col>
+            <div>Cost Hours: ${{cost_hours}} </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="ion-text-center">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>HaskyConnection Fee: ${{haskyfree}} </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="ion-text-center">
+      <h3>Total Amount Payable Of</h3>
+      <h5>$ {{totalPay}}</h5>
+    </div>
+  </ion-card>
+  <div class="ion-text-center"><br>
+    
+  </div>
+
+  
+  <ion-button (click)="checkout()" expand="block" color="success">
+      <ion-icon name="cash"></ion-icon>
+  </ion-button>
+
+  <!-- <ion-card class="welcome-card">
+    <ion-img src="./assets/stripe.png"></ion-img>
+    <ion-card-content>
+      <form action="/" method="post" id="payment-form">
+        <div class="form-row">
+          <div id="card-element"></div>
+          <div id="card-errors" role="alert"></div>
+        </div>
+        <ion-button type="submit" color="success" expand="full">Make Payment</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>

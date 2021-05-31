@@ -1,0 +1,56 @@
+{
+  "_from": "cordova-plugin-ios-decimal-keyboard",
+  "_id": "cordova-plugin-ios-decimal-keyboard@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-UKUtENTLIBDaoLugiz/TOuRqmRmiMCIv00umnYrgqNoRZ8YdYejgnoGiKTo2QG3Rr0bfFj5DA6ZwfXnW9kgTVQ==",
+  "_location": "/cordova-plugin-ios-decimal-keyboard",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-ios-decimal-keyboard",
+    "name": "cordova-plugin-ios-decimal-keyboard",
+    "escapedName": "cordova-plugin-ios-decimal-keyboard",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ios-decimal-keyboard/-/cordova-plugin-ios-decimal-keyboard-1.0.1.tgz",
+  "_shasum": "6e803aa8b0c0a17783bdaeb9facab14468ee7aed",
+  "_spec": "cordova-plugin-ios-decimal-keyboard",
+  "_where": "C:\\Users\\ismae\\Documents\\app_contratista\\app_contratista",
+  "author": {
+    "name": "Grant Brits"
+  },
+  "bugs": {
+    "url": "https://github.com/gbrits/cordova-plugin-decimal-keyboard/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-ios-decimal-keyboard",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Adding Decimal Numeric Keyboard Support for iOS",
+  "homepage": "https://github.com/gbrits/cordova-plugin-decimal-keyboard#readme",
+  "keywords": [
+    "cordova",
+    "keyboard",
+    "decimal",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-ios-decimal-keyboard",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbrits/cordova-plugin-decimal-keyboard.git"
+  },
+  "version": "1.0.1"
+}

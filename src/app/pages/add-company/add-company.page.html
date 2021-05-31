@@ -1,0 +1,37 @@
+<ion-content color="dark" >
+    <div class="ion-text-center" style="width: 100%; height: auto; background-color: #3E3E3E;">
+      <br><br>
+      <img src="../../../assets/building.png" width="120"/><br>
+      <h3>{{language.add}}</h3><br>
+    </div>
+    <ion-list class="ion-padding">
+        <ion-item mode="md" color="dark">
+            <ion-label position="stacked" color="light"
+              ><ion-text></ion-text
+            ></ion-label>
+            <ion-input
+              type="text"
+              color="light"
+              placeholder="{{language.name}}"
+              [(ngModel)]="name"
+            ></ion-input>
+            
+        </ion-item>
+        <ion-item mode="md" color="dark">
+            <ion-label position="stacked" color="light"
+              ><ion-text></ion-text
+            ></ion-label>
+            <ion-input
+              type="text"
+              color="light"
+              placeholder="{{language.description}}"
+              [(ngModel)]="descrition"
+            ></ion-input>
+           
+        </ion-item><br><br><br>
+        
+            <ion-button expand="block" (click)="saveCompany()">{{language.Continue}}</ion-button>     
+        
+        
+    </ion-list>
+</ion-content>

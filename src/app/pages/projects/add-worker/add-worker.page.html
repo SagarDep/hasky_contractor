@@ -1,0 +1,363 @@
+<ion-content fullscreen padding>
+  <ion-slides slidesPerView="1" onlyExternal="false">
+    <ion-slide>
+      <div style="width: 100%; height: 100%; ">
+        <ion-row size="12">
+          <div style="width: 100%;">
+            <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+              {{p1.title}}
+            </h3>
+          </div>
+          <ion-col
+            size-md="4"
+            size-xs="6"
+            size-lg="6"
+            size-xl="6"
+            size-sm="4"
+            *ngFor="let data of Trades"
+            (click)="saveTrades(data.id, data.name)"
+          > 
+            <div [class]="changeColor" id="{{data.id}}">
+              <div class="ion-text-center">
+                <ion-label
+                  [color]="changeColor"
+                  id="{{data.id}}"
+                  class="ion-text-wrap"
+                  >{{data.name}}</ion-label
+                ><br />
+                <br />
+                <img
+                  src="https://api.haskyconnections.com/uploads/{{data.image}}"
+                  style="width: 60px;"
+                />
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="width: 100%; height: 100%; ">
+        <ion-row size="12">
+          <div style="width: 100%;">
+            <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+              {{p2.title}}
+            </h3>
+          </div>
+          <ion-col
+            *ngFor="let data of experience"
+            (click)="saveExperience(data.name, data.name)"
+          >
+            <ion-chip [class]="changeColor22" id="{{data.name}}">
+              <ion-label>{{data.name}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-row size="12">
+        <div style="width: 100%;">
+          <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+            {{p3.title}}
+          </h3>
+        </div>
+        <div class="cn">
+          <div class="inner">
+            <ion-button (click)="minWorker()">
+              <ion-icon name="remove" size="large"></ion-icon>
+            </ion-button>
+            <ion-button size="large" style="--background: #333232;">
+              {{numWorke}}
+            </ion-button>
+            <ion-button (click)="sumWorker()">
+              <ion-icon name="add" size="large"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <div style="width: 100%;">
+        <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+          {{p5.title}}
+        </h3>
+        <br />
+        <ion-button ion-button icon-right (click)="picker.open()" size="large">
+          <ion-datetime
+            #picker
+            pickerFormat="YYYY MM DD"
+            [(ngModel)]="datestart"
+            max="2050-01-01"
+            min="{{mindate}}"
+            (ionChange)="changeDate($event)"
+          ></ion-datetime>
+          <ion-icon name="calendar" class="ion-text-center"></ion-icon>
+        </ion-button>
+        <br />
+        <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+          {{p5.end}}
+        </h3>
+        <ion-button ion-button (click)="picke.open()" size="large">
+          <ion-datetime
+            #picke
+            pickerFormat="YYYY MM DD"
+            [(ngModel)]="datend"
+            max="2050-01-01"
+            min="{{mindate}}"
+            (ionChange)="changeDateEnd($event)"
+          ></ion-datetime>
+          <ion-icon name="calendar" class="ion-text-center"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-row size="12">
+        <div style="width: 100%;">
+          <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+            {{p5.title}}
+          </h3>
+          <br />
+        </div>
+        <ion-col
+          size-md="6"
+          size-xs="6"
+          size-lg="6"
+          size-xl="6"
+          size-sm="6"
+          *ngFor="let data of days"
+        >
+          <ion-item lines="none">
+            <input
+              type="checkbox"
+              id="{{data.name}}"
+              [(ngModel)]="data.isChecked"
+            />
+            <label for="{{data.name}}"> {{data.name}}</label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-row size="12">
+        <div style="width: 100%;">
+          <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+            {{p6.select}}
+          </h3>
+          <br />
+        </div>
+        <div style="width: 100%; height:  100px; background-color: #333232">
+          <ion-col>
+            <div>
+              <button
+                (click)="removePrice()"
+                style="background-color: #05b7d7; border-radius: 100%;"
+              >
+                <ion-icon
+                  name="remove"
+                  size="large"
+                  style="color: white;"
+                ></ion-icon>
+              </button>
+            </div>
+          </ion-col>
+          <ion-col col-6>
+            <div style="">
+              <h1 style="font-size: 50px; color: white;">{{priceTrade}}/hr</h1>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="">
+              <button
+                (click)="sumPrice()"
+                style="background-color: #05b7d7; border-radius: 100%;"
+              >
+                <ion-icon
+                  name="add"
+                  size="large"
+                  style="color: white;"
+                ></ion-icon>
+              </button>
+            </div>
+          </ion-col>
+        </div>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <div style="width: 100%;">
+        <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+          {{p7.start_time}}
+        </h3>
+        <br />
+        <ion-button ion-button icon-right (click)="pic.open()" size="large">
+          <ion-datetime
+            #pic
+            display-format="h:mm A"
+            picker-format="h:mm A"
+            [(ngModel)]="startT"
+            (ionChange)="startTime($event)"
+          ></ion-datetime>
+          <ion-icon name="calendar" class="ion-text-center"></ion-icon>
+        </ion-button>
+        <br />
+        <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+          {{p7.end_time}}
+        </h3>
+        <ion-button ion-button (click)="pi.open()" size="large">
+          <ion-datetime
+            #pi
+            display-format="h:mm A"
+            picker-format="h:mm A"
+            [(ngModel)]="endT"
+            (ionChange)="endTime($event)"
+          ></ion-datetime>
+          <ion-icon name="calendar" class="ion-text-center"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="width: 100%;">
+        <h3 class="ion-text-wrap ion-text-center" style="color: white;">
+          {{p8.task}} {{labor}} {{p8.task2}}
+        </h3>
+        <br />
+        <ion-item>
+          <ion-textarea
+            [(ngModel)]="task"
+            placeholder="Enter more information here..."
+            rows="6"
+            cols="20"
+            color="light"
+          ></ion-textarea>
+        </ion-item>
+      </div>
+    </ion-slide>
+    <ion-slide padding>
+      <div style="width: 100%;">
+        <ion-list>
+          <ion-item lines="none">
+            <ion-label
+              style="font-size: 14px;"
+              position="fixed"
+              color="light"
+              class="ion-text-wrap"
+              >{{p9.skil}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly>{{skill}}</ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light"
+              >{{p9.experience}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly
+              >{{valueExperiencie}}</ion-input
+            >
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light" class="ion ion-text-wrap"
+              >{{p9.quantity}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly
+              >{{numWorke}}</ion-input
+            >
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light"
+              >{{p9.start}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly>{{startD}}</ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label
+              style="font-size: 12px;"
+              position="fixed"
+              color="light"
+              class="ion-text-wrap"
+              >{{p9.end}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly>{{endD}}</ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light"
+              >{{p9.week}}</ion-label
+            >
+            <ion-label slot="end" class="ion-text-wrap" color="light"
+              >{{daysS}}</ion-label
+            >
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light"
+              >{{p9.start_time}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly
+              >{{startTimen}}</ion-input
+            >
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light"
+              >{{p9.end_time}}</ion-label
+            >
+            <ion-input slot="end" color="light" readonly
+              >{{endTimes}}</ion-input
+            >
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label style="font-size: 12px;" position="fixed" color="light"
+              >{{p9.task}}</ion-label
+            >
+            <ion-textarea
+              slot="end"
+              color="light"
+              readonly
+              [(ngModel)]="task"
+              class=""
+              rows="8"
+            ></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer no-border lines="no-line">
+  <ion-toolbar color="dark" no-border lines="no-line">
+    <ion-button
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;"
+      *ngIf="noPage == 1"
+      (click)="presentActionSheet()"
+    >
+      {{pe.cancel}}
+    </ion-button>
+    <ion-button
+      (click)=" slidePrev()"
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;"
+      *ngIf="noPage != 1"
+    >
+      {{pe.back}}
+    </ion-button>
+    <div text-center style="width: 100%">{{noPage}}/9</div>
+    <ion-button
+      color="success"
+      slot="end"
+      style="margin-right: 18px;"
+      (click)="slideNext()"
+      *ngIf="noPage == 1 || noPage != 9"
+    >
+      {{pe.next}}
+    </ion-button>
+    <ion-button
+      [disabled] = "enable"
+      color="success"
+      slot="end"
+      style="margin-right: 18px;"
+      *ngIf="noPage == 9"
+      (click)="saveAddworker()"
+    >
+      {{pe.save}}
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

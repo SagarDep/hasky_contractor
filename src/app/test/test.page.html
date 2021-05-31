@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <button (click)="test()">alerts</button>
+  <ion-list>
+    <ion-item *ngFor="let i of habilidades">
+      {{ i.ability.name }}
+    </ion-item>
+  </ion-list>
+
+  <ion-item> {{ userus.id }}</ion-item>
+  <ion-item> {{ userus.first_name }}</ion-item>
+  <ion-item> {{ userus.last_name }}</ion-item>
+
+  <ion-item>
+      <ion-label floating>Enter Address</ion-label>
+      <ion-input id="txtHome" type="text"></ion-input>
+  </ion-item>
+  <button (click)="generate()">pass</button>
+
+</ion-content>

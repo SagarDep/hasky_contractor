@@ -1,0 +1,188 @@
+<app-header ></app-header>
+<ion-content fullscreen padding  (click)="hideKeyboard($event)"  >
+    <ion-slides [options]="slideOpts">
+
+        <ion-slide>
+            <div style="height: 100%; width: 100%;">
+                <form [formGroup]="singup" >
+                <ion-list color="dark">
+                    
+                  <ion-item mode="md" *ngIf="isKeyboardopen">
+                    <ion-label position="stacked" color="light"
+                      > {{p1.name}}<ion-text></ion-text
+                        > </ion-label>
+                   <ion-input formControlName="project" color="light" required placeholder="Eg. Project name"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list color="dark">
+                    <ion-item mode="md" *ngIf="isKeyboardopen"> 
+                      <ion-label position="stacked" color="light"
+                        >{{p2.supervisor}} <ion-text></ion-text
+                      ></ion-label>
+                      <ion-input required type="text" formControlName="supervisor" color="light" placeholder="Eg. Supervisor name"></ion-input>
+                    </ion-item>
+                    <ion-item mode="md" *ngIf="isKeyboardopen">
+                      <ion-label position="stacked" color="light"
+                        >{{p2.supervisor_number}} <ion-text></ion-text
+                      ></ion-label>
+                      <ion-input required type="tel" color="light" formControlName="phone" maxlength="10" placeholder="Eg. 123456789"></ion-input>
+                    </ion-item>
+                    <ion-item mode="md" *ngIf="isKeyboardopen">
+                      <ion-label position="stacked" color="light"
+                        >{{p1.description}} <ion-text></ion-text
+                      ></ion-label>
+                      <ion-input required type="text" color="light" formControlName="description" placeholder="Eg. Project description"></ion-input>
+                    </ion-item>
+                  </ion-list>  
+                </form>
+                <ion-item mode="md" > 
+                    <ion-label position="stacked" color="light"
+                      >{{p1.addres}} <ion-text></ion-text
+                    ></ion-label>
+                    <ion-input required type="text" color="light" #addres [(ngModel)]="autocomplete.input"   (ionInput)="updateSearchResults($event)"  placeholder="Eg. Address"></ion-input>
+                  </ion-item>
+                  
+                  
+
+                  
+                        <ion-list [hidden]="autocompleteItems.length == 0" style="height: 200px; width: 300px;"  > 
+                          <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)" >
+                            <ion-label color="light" class="ion-text-wrap"> {{ item.description }}</ion-label>
+                          </ion-item>
+                         
+                        </ion-list> 
+                      
+                                
+              </div>
+        </ion-slide>
+        
+          
+        <ion-slide>
+            <div style="height: 100%; width: 100%;">
+              <ion-list>
+                <div text-center>
+                  <ion-label color="light">
+                    {{p2.daily}}
+                  </ion-label>
+                </div>
+                <ion-row size="12">
+                  <ion-col size="6" *ngFor="let data of Times; let i = index">
+                    <ion-button expand="block"    (click)="check(data.id, data.description)" [class]="butto"  id="{{data.id}}"  >{{data.description}}</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-list>
+              <ion-list>
+                <div text-center>
+                  <ion-label color="light">
+                        {{p3.paid}}
+                  </ion-label>
+                </div>
+                <ion-row size="12">
+                    <ion-col size="6" *ngFor="let data of Times; let i = index">
+                      <ion-button expand="block" color="medium"  fill="outline"  (click)="check2(data.number, data.id, data.description)" id="{{data.number}}"  >{{data.description}}</ion-button>
+                    </ion-col>
+                  </ion-row>
+              </ion-list>
+              
+            </div>
+        </ion-slide>
+
+        <ion-slide >
+          <div style="height: 100%; width: 100%;">
+          <ion-list>
+            <ion-item lines="none">
+                <ion-label style="font-size: 12px;" position="fixed" color="light" class="ion-text-wrap">{{p5.name}} </ion-label>
+                <ion-input slot="end" color="light" readonly  >{{project}}</ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label style="font-size: 12px;" position="fixed" color="light">{{p5.supervisor_name}}</ion-label>
+                <ion-input slot="end" color="light" readonly >{{supervisor}}</ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label style="font-size: 12px;" position="fixed" color="light">{{p5.number}}</ion-label>
+                <ion-input slot="end" color="light" readonly >{{phone}}</ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label style="font-size: 12px;"position="fixed" color="light">{{p5.addres}} </ion-label>
+                <ion-input slot="end" color="light" readonly  >{{address}}</ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-label style="font-size: 12px;"position="fixed" color="light" class="ion-text-wrap">{{p5.description}} </ion-label>
+                
+                <ion-textarea slot="end" color="light" readonly  class="ion-text-wrap" [(ngModel)]="description"></ion-textarea>
+            </ion-item>
+            <div style="height: 1px; width: 100%;  border-bottom: 2px solid white"></div>
+          </ion-list>
+          <ion-list>
+              <ion-item lines="none">
+                  <ion-label style="font-size: 12px;"position="fixed" color="light">{{p5.total}} </ion-label>
+                  <ion-input slot="end" color="light" readonly  >{{descriptionbreak}}</ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                  <ion-label style="font-size: 12px;"position="fixed" color="light">{{p5.paid}} </ion-label>
+                  <ion-input slot="end" color="light" readonly >{{descriptionpaid}}</ion-input>
+              </ion-item>
+          </ion-list>
+            
+         
+          </div>
+         
+        </ion-slide>
+
+      </ion-slides>
+</ion-content>
+
+<ion-footer no-border lines="no-line">
+  <ion-toolbar color="dark" no-border lines="no-line">
+    <ion-button
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;"
+      *ngIf="noPage == 1"
+      (click)="presentActionSheet()"
+    >
+    {{button.cancel}}
+    </ion-button>
+    <ion-button (click)=" slidePrev()"
+      slot="start"
+      color="dark"
+      style="margin-left: 20px;" 
+      *ngIf="noPage != 1"
+    >
+      {{button.back}}
+    </ion-button>
+    <div text-center style="width: 100%">{{noPage}}/3</div>
+    <ion-button
+      color="success"
+      slot="end"
+      style="margin-right: 18px;"
+      (click)="slideNext()"
+      *ngIf="noPage == 1"
+      [disabled]="!singup.valid"
+    >
+     {{button.next}}
+    </ion-button>
+    <ion-button
+      color="success"
+      slot="end"
+      style="margin-right: 18px;"
+      (click)="slideTime()"
+      *ngIf="noPage == 2"
+      [disabled]="!singup.valid"
+    >
+     {{button.next}}
+    </ion-button>
+    
+    <ion-button
+    [disabled] = "enable"
+    color="success"
+    slot="end"
+    style="margin-right: 18px;"
+    *ngIf="noPage == 3"
+    (click)="save()"
+  >
+    {{button.save}}
+  </ion-button>
+  </ion-toolbar>
+</ion-footer>
+

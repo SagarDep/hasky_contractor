@@ -1,0 +1,68 @@
+<app-header tittle="{{language.notifications}}"></app-header>
+<ion-content padding>
+  <ion-card color="dark" *ngIf="notifications">
+    <ion-card-header>
+      <ion-card-title>{{language.verify}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{language.cant}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="dark" *ngIf="notifications">
+    <ion-card-header> 
+      <ion-card-title>
+        <h3>{{language.no}}</h3>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <div *ngIf="!data" class="animated fadeIn fast">
+  <div *ngFor="let data of notification">
+    <div *ngIf="data.read_at == null">
+      <ion-card  style="background-color: #222428;" (click)="openProject(data.data.request_id, data.data.title)">
+        <ion-card-content>
+          <span style="color:white"><strong>{{data.data.title}}</strong></span> <br>
+          <span style="color:white">{{data.data.data}}</span>
+          
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div *ngIf="data.read_at != null">
+      <ion-card (click)="openProject(data.data.request_id, data.data.title)" >
+        <ion-card-content>
+          <span style="color:white"><strong>{{data.data.title}}</strong></span> <br>
+          <span style="color:white">{{data.data.data}}</span>
+          
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+  </div>
+  </div>
+
+
+  <div *ngIf="data" class="animated fadeIn fast">
+    <div *ngFor="let data of notification">
+      <div *ngIf="data.read_at != null">
+        <ion-card color="dark" >
+          <ion-card-content> 
+            <ion-skeleton-text
+            animated
+            style="width: 50px; height: 12px"
+            color="height"
+          ></ion-skeleton-text><br>
+          
+            <ion-skeleton-text
+            animated
+            style="width: 100px; height: 12px"
+            color="height"
+          ></ion-skeleton-text>
+            
+          </ion-card-content>
+        </ion-card>
+      </div>      
+    </div>
+  </div>
+</ion-content>

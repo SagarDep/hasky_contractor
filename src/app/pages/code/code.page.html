@@ -1,0 +1,15 @@
+<ion-header color="dark" no-border>
+  <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>    
+    <ion-title>{{language.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion ion-padding" color="dark">
+  <ion-input [placeholder]="language.text" [(ngModel)]="code" (keyup)="onVerifyChange($event)"></ion-input><br>
+  <ion-button expand="block" color="success" [disabled]="checkIsEnabled()" (click)="verifyCode()">{{language.confirm}}</ion-button><br>
+  <ion-label>{{language.resend}} <span style="color: green;" (click)="resenCode()">{{language.button}}</span></ion-label>
+</ion-content>
+ 

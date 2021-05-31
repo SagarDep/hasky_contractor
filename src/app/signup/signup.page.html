@@ -1,0 +1,181 @@
+<ion-header color="dark" no-border>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ language.singup }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="dark">
+  <ion-list color="dark">
+    <form [formGroup]="singup">
+      <ion-item mode="md" color="dark">
+        <ion-label position="stacked" color="light"
+          >{{ language.firtsname }} <ion-text></ion-text
+        ></ion-label>
+        <ion-input
+          formControlName="firstname"
+          type="text"
+          color="light"
+          placeholder = "Eg. Name"
+        ></ion-input>
+        <ion-icon name="person" color="light" slot="end"></ion-icon>
+      </ion-item>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.firstname">
+          <div
+            class="error-message" 
+            *ngIf="
+              singup.get('firstname').hasError(error.type) &&
+              (singup.get('firstname').dirty || singup.get('firstname').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br />
+      <ion-item mode="md" color="dark">
+        <ion-label position="stacked" color="light"
+          >{{ language.lastname }} <ion-text></ion-text
+        ></ion-label>
+        <ion-input
+          formControlName="lastname"
+          type="text"
+          color="light"
+          placeholder = "Eg. Surname"
+        ></ion-input>
+        <ion-icon name="person" color="light" slot="end"></ion-icon>
+      </ion-item>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.lastname">
+          <div
+            class="error-message"
+            *ngIf="
+              singup.get('lastname').hasError(error.type) &&
+              (singup.get('lastname').dirty || singup.get('lastname').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br />
+      <ion-item color="dark">
+        <ion-label position="stacked" color="light"
+          >{{ language.email }} <ion-text></ion-text
+        ></ion-label>
+        <ion-input
+          formControlName="email"
+          type="email"
+          color="light"
+          placeholder = "Eg. email@email.com"
+        ></ion-input>
+        <ion-icon name="mail" color="light" slot="end"></ion-icon>
+      </ion-item>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.email">
+          <div
+            class="error-message"
+            *ngIf="
+              singup.get('email').hasError(error.type) &&
+              (singup.get('email').dirty || singup.get('email').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br />
+      <ion-item color="dark">
+        <ion-label position="stacked" color="light"
+          >{{ language.phone }} <ion-text></ion-text
+        ></ion-label>
+        <ion-input
+          formControlName="phone"
+          type="tel"
+          color="light"
+          placeholder = "Eg. 123456789"
+        ></ion-input>
+        <ion-icon name="call" color="light" slot="end"></ion-icon>
+      </ion-item>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.phone">
+          <div
+            class="error-message"
+            *ngIf="
+              singup.get('phone').hasError(error.type) &&
+              (singup.get('phone').dirty || singup.get('phone').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br />
+      <ion-item color="dark">
+        <ion-label position="stacked" color="light"
+          >{{ language.password }} <ion-text></ion-text
+        ></ion-label>
+        <ion-input
+          formControlName="password"
+          [type]="password"
+          color="light"
+          placeholder = "Eg. password"
+        ></ion-input>
+        <ion-icon *ngIf="valor == 0" name="eye" color="light" slot="end" (click)="viewPassword()"></ion-icon>
+        <ion-icon *ngIf="valor == 1" name="eye-off" color="light" slot="end" (click)="viewPassword()"></ion-icon>
+      </ion-item>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.password">
+          <div
+            class="error-message"
+            *ngIf="
+              singup.get('password').hasError(error.type) &&
+              (singup.get('password').dirty || singup.get('password').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br />
+      <ion-item color="dark">
+        <ion-label position="stacked" color="light"
+          >{{ language.passwordR }} <ion-text></ion-text
+        ></ion-label>
+        <ion-input
+          formControlName="passwordR"
+          [type]="password2"
+          color="light"
+          placeholder = "Eg. password"
+        ></ion-input>
+        <ion-icon *ngIf="valor2 == 0" name="eye" color="light" slot="end" (click)="viewPassword2()"></ion-icon>
+        <ion-icon *ngIf="valor2 == 1" name="eye-off" color="light" slot="end" (click)="viewPassword2()"></ion-icon>
+      </ion-item>
+      <div class="error-messages">
+        <ng-container *ngFor="let error of error_messages.passwordR">
+          <div
+            class="error-message"
+            *ngIf="
+              singup.get('passwordR').hasError(error.type) &&
+              (singup.get('passwordR').dirty || singup.get('passwordR').touched)
+            "
+          >
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <br />
+      <ion-button
+        expand="block"
+        color="success"
+        (click)="save()"
+        [disabled]="!singup.valid"
+        >{{ language.singup }}
+      </ion-button>
+      
+    </form>
+  </ion-list>
+</ion-content>

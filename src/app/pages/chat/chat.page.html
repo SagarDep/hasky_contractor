@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{selectedUser.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-content #content id="chatMessage">
+    <div *ngFor="let message of messages" class="message">
+      <div [class]="message.receiverUid == selectedUser.uid ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        <div class="userName">
+          <ion-chip>
+            <ion-label>{{message.senderName}}</ion-label>
+          </ion-chip>
+        </div>
+        <div class="msg">{{ message.text}}</div>
+        <ion-item *ngIf="message.file">
+          <ion-img [src]="message.file"></ion-img>
+        </ion-item>
+      </div>
+    </div>
+  </ion-content>
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-input [(ngModel)]="inputText" name="inputText" placeholder="Type your Message" type="text"></ion-input>
+    <ion-buttons end>
+      <ion-button (click)="openFileChooser()">
+        <ion-icon name="image"></ion-icon>
+      </ion-button>
+      <ion-button (click)="sendMessage()">
+        <ion-icon name="send"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-footer>

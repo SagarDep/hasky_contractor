@@ -1,0 +1,913 @@
+{
+  "es": [
+    {
+      "login": [
+        {
+          "language": "Español",
+          "email": "Correo Electrónico",
+          "password": "Contraseña",
+          "facebook": "Iniciar sesión con Facebook",
+          "account": "No tienes una cuenta?",
+          "login": "Iniciar Sesión",
+          "loginFail": "Usuario o Contraseña incorrecta",
+          "create": "Regístrate",
+          "or": "O",
+          "forgot": "¿Ha olvidado la contraseña?"
+        }
+      ],
+      "message": [
+        {
+          "loading": "Cargando..."
+        }
+      ],
+      "signup": [
+        {
+          "singup": "Registrarse",
+          "firtsname": "Nombre's",
+          "lastname": "Apellido's",
+          "email": "Correo Electrónico",
+          "phone": "Teléfono Móvil",
+          "password": "Contraseña",
+          "passwordR": "Repetir Contraseña",
+          "account": "Ya tiene una cuenta?"
+        }
+      ],
+      "confirmation": [
+        {
+          "title": "Confirmación de Usuario ",
+          "resend": "Reenviar Código",
+          "button": "Haz click aquí",
+          "confirm": "Confirmar",
+          "text": "Ingresa el código de confirmación"
+        }
+      ],
+      "menu": [
+        {
+          "projects": "Proyectos",
+          "notification": "Notificaciones",
+          "profile": "Perfil",
+          "message": "Mensajes",
+          "home": "Inicio",
+          "qr":"Ver QR",
+          "back": "Cerrar Sesión"
+        }
+      ],
+      "button": [
+        {
+          "createProject": "Crear Proyecto",
+          "requesProject": "Solicitar Trabajadores",
+          "progress":"TRABAJOS EN PROGRESO",
+          "pending":"TRABAJOS PENDIENTES",
+          "completed":"Trabajos completados",
+          "chat": "Chat"
+
+        }
+      ],"error_messages": [
+        {
+          "email": [
+            { "type": "obligatorio", "message": "correo electronico obligatorio" },
+            {
+              "type": "longitud mínima",
+              "message": "la longitud del correo electrónico debe ser mayor o igual a 6 caracteres"
+            },
+            {
+              "type": "longitud máxima",
+              "message": "la longitud del correo electrónico debe ser inferior o igual a 35 caracteres"
+            },
+            { "type": "patrón", "message": "Por favor introduzca una dirección de correo electrónico válida" }
+          ],
+          "firstname": [
+            { "type": "obligatorio", "message": "Se requiere el primer nombre" },
+            {
+              "type": "longitud mínima",
+              "message": "la longitud del nombre debe ser mayor o igual a 3 caracteres"
+            },
+            {
+              "type": "longitud máxima",
+              "message": "la longitud del primer nombre debe ser menor o igual a 35 caracteres"
+            }
+          ],
+          "lastname": [
+            { "type": "obligatorio", "message": "se requiere apellido" },
+            {
+              "type": "longitud mínima",
+              "message": "la longitud del apellido debe ser mayor o igual a 3 caracteres"
+            },
+            {
+              "type": "longitud máxima",
+              "message": "la longitud del apellido debe ser menor o igual a 35 caracteres"
+            }
+          ],
+          "phone": [
+            { "type": "obligatorio", "message": "se requiere teléfono" },
+            {
+              "type": "longitud mínima",
+              "message": "la longitud del teléfono debe ser mayor o igual a 10 caracteres"
+            },
+            {
+              "type": "longitud máxima",
+              "message": "la longitud del teléfono debe ser inferior o igual a 10 caracteres"
+            }
+          ],
+          "password": [
+            { "type": "obligatorio", "message": "se requiere contraseña" },
+            {
+              "type": "longitud mínima",
+              "message": "la longitud de la contraseña debe ser mayor o igual a 8 caracteres"
+            },
+            {
+              "type": "longitud máxima",
+              "message": "la longitud de la contraseña debe ser inferior o igual a 35 caracteres"
+            }
+          ],
+          "passwordR": [
+            { "type": "obligatorio", "message": "se requiere contraseña" },
+            {
+              "type": "longitud mínima",
+              "message": "la longitud de la contraseña debe ser mayor o igual a 8 caracteres"
+            },
+            {
+              "type": "longitud máxima",
+              "message": "la longitud de la contraseña debe ser inferior o igual a 35 caracteres"
+            }
+          ]
+        }
+      ],"add_worker": [
+        {
+          "page1": [
+            {
+              "title": "Seleccione el tipo de trabajador(es) que necesita",
+              "services": [
+                {
+                  "general": "TRABAJO GENERAL",
+                  "framer": "ENMARCADOR",
+                  "finish": "FINISH CARPENTER",
+                  "concrete": "CONCRETE FORMER",
+                  "hardscaper": "HARDSCAPER",
+                  "landscaper": "LANDSCAPER",
+                  "painter": "PAINTER",
+                  "drywaller": "DRY WALLER",
+                  "asbestos": "ASBESTOS",
+                  "warehouse": "WAREHOUSE"
+                }
+              ]
+            }
+          ],
+          "page2": [
+            {
+              "title": "Seleccione el nivel(es) de experiencia del trabajador(es) que necesita"
+            }
+          ],
+          "page3": [
+            {
+              "title": "¿Cuántos trabajadores necesita?",
+              "quantity": "Cantidad de trabajadores"
+            }
+          ],
+          "page4": [
+            {
+              "title": "What are the task the Framer(s) will be working on?",
+              "message": "Ingrese la tarea del trabajador(es) aquí. Una mejor descripción ayuda a obtener el mejor trabajador compatible"
+            }
+          ],
+          "page5": [
+            {
+              "title": "¿Cuál es la fecha de inicio del trabajador(es)?",
+              "end":"¿Cuál es la fecha de finalización del trabajador(es)?",
+              "buttons": [
+                {
+                  "select": "SELECCIONE LA FECHA DE INICIO",
+                  "edit": "EDITAR FECHA DE INICIO",
+                  "edit_end": "EDITAR FECHA FINAL"
+                }
+              ]
+            }
+          ],
+          "page6": [
+            {
+              "select": "Seleccione el salario que desea que le paguen al trabajador.",
+              "info":"Ingrese más información aquí..."
+
+            }
+          ],
+          "page7": [
+            {
+              "start_time": "¿Cuál es la hora de inicio diaria del trabajador(es)?",
+              "buttons": [
+                {
+                  "edit": "EDITAR HORA DE INICIO",
+                  "edit_end": "EDITAR HORA FINAL"
+                }
+              ],
+              "end_time": "¿Cuál es la hora de finalización diaria para el trabajador(es)?"
+            }
+          ],
+          "page8": [
+            {
+              "task": "En qué tareas estará trabajando el ",
+              "task2":"de acabado"
+
+            }
+          ],
+          "page9": [
+            {
+              "title": "Resumen de solicitud",
+              "skil": "Habilidad",
+              "experience": "Experiencia",
+              "quantity": "Cantidad de trabajadores",
+              "start": "Fecha de inicio",
+              "end": "Fecha final",
+              "week": "Días laborables",
+              "start_time": "Hora de inicio",
+              "end_time": "Hora de finalización",
+              "project": "Proyecto",
+              "requeriments": "Requisitos",
+              "task": "Tareas del trabajador"
+            }
+          ],
+          "page_end": [
+            {
+              "back": "Atras",
+              "cancel": "Cancelar",
+              "next": "Siguiente",
+              "save": "Guardar",
+              "button": [
+                {
+                  "request": "SOLICITAR OTRO TRABAJADOR",
+                  "done": "HECHO"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "new_project": [
+        {
+          "button": {
+            "cancel": "cancelar",
+            "back": "atras",
+            "next": "siguiente",
+            "save": "guardar"
+          },
+          "page1": {
+            "name": "¿Cuál es el nombre del proyecto?",
+            "number": "¿Cuál es el número de teléfono del proyecto?",
+            "addres": "¿Cuál es la dirección del proyecto?",
+            "description": "¿Cuál es la descripción del proyecto?"
+          },
+          "page2": {
+            "supervisor": "¿Cual es el nombre del supervisor?",
+            "supervisor_number": "¿Cuál es el número de teléfono del supervisor?",
+            "daily": "¿Cuanto es el tiempo de descanso por dia?",
+            "button": {
+              "minutes": "MINUTOS"
+            }
+          },
+          "page3": {
+            "paid": "¿Cuánto de ese tiempo de descanso está cubierto o pagado?",
+            "overtime": "¿Cuándo está disponible el pago de horas extras para los trabajadores?",
+            "project": "¿En qué fase se encuentra el proyecto (opcional)?",
+            "button": {
+              "none": "NINGUNO",
+              "hours": "DESPUÉS DE 40 HORAS / SEMANA",
+              "starting": "FASE PREVIA AL INICIO",
+              "starting_phase": "FASE INICIAL",
+              "middle": "FASE MEDIA",
+              "endindg": "FASE FINAL"
+            }
+          },
+          "page4": {
+            "project_end": "¿Cuándo terminará el proyecto (opcional)?",
+            "type_project": "¿Qué tipo de proyecto es?",
+            "buttons": {
+              "less": "MENOS DE 3 MESES",
+              "moths": "MESES",
+              "more": "MÁS DE 12 MESES",
+              "civil": "CIVIL",
+              "commercial": "COMERCIAL",
+              "industrial": "INDUSTRIAL",
+              "residential": "RESIDENCIAL",
+              "other": "OTRO"
+            }
+          },
+          "end_page": {
+            "name": "Nombre:",
+            "number": "Numero de Telefono:",
+            "addres": "Direccion:",
+            "supervisor_name": "Nombre del supervisor:",
+            "supervisor_contac": "Contacto del supervisor:",
+            "total": "Tiempo total de descanso:",
+            "paid": "Tiempo de descanso pagado:",
+            "overtime": "Tiempo Extra:",
+            "project_type": "Tipo de proyecto:",
+            "project_phase": "Fase del proyecto:",
+            "Project_length": "Longitud del proyecto:"
+          }
+        }
+      ],"project_details": [
+        {
+          "title": "Detalles de solicitud",
+          "name": "Nombre:",
+          "address": "Direccion:",
+          "supervisor": "Supervisor",
+          "phone": "Telefono del supervisor:",
+          "description": "Descripcion:",
+          "breaktime": "Descanso:",
+          "bpaid": "Tiempo de descanso pagado:",
+          "paid":"Pago",
+          "break":"Descanso",
+          "overtime": "Tiempo extra:",
+          "experience": "Experiencia",
+          "request": "Trabajadores solicitados",
+          "quantity": "Cantidad de trabajadores",
+          "status":"Estatus",
+          "task":"Tarea",
+          "delete": "Borrar",
+          "save": "guardar",
+          "activate":"Activar Trabajo",
+          "finish":"Finalizar Trabajo"
+
+        }
+      ],"request_worker": [
+        {
+          "title": "Solicitar Trabajador"
+        }
+      ],
+      "profile": [
+        {
+          "title": "Perfil",
+          "company":"Empresa",
+          "personal":"Informacion Personal",
+          "documents":"Documentos",
+          "view": "Ver Documento",
+          "document":"Documento",
+          "delete": "Desea eliminar este documento permanentemente?"
+
+        }
+      ],
+      "edit_company": [
+        {
+          "title": "Editar empresa",
+          "save":"Guardar",
+          "image":"Se requiere imagen",
+          "name":"Nombre",
+          "description":"Descripción",
+          "phone":"Número de teléfono",
+          "email":"Correo Electrónico",
+          "rfc":"RFC",
+          "rs":"RS",
+          "address":"Dirección"
+        }
+      ],
+      "edit_user": [
+        {
+          "title": "Editar perfil",
+          "save":"Guardar",
+          "image":"Imagen de perfil",
+          "rimage":"se requiere imagen de perfil",
+          "fname":"Nombre",
+          "lname":"Apellido",
+          "phone":"Número de teléfono",
+          "email":"Correo Electrónico",
+          "address":"Dirección",
+          "document":"Agregar documento",
+          "rdocument":"Se requiere documento"
+        }
+      ],
+      "notifications": [
+        {
+          "verify": "Verifique las horas de trabajo semanalmente",
+          "cant":"puede verificar las horas de todos los trabajadores en cada proyecto aquí",
+          "no":"NO HAY NOTIFICACIONES EN ESTE MOMENTO"
+        }
+      ],
+      "password": [
+        {
+          "email": "Correo electronico",
+          "send":"Enviar correo",
+          "code":"Codigo",
+          "new":"Nueva contraseña",
+          "change":"Cambiar contraseña"
+        }
+      ],
+      "add_company": [
+        {
+          "add": "Añadir empresa",
+          "name":"Nombre de la empresa",
+          "description":"Descripción",
+          "Continue":"Continuar"
+        }
+      ],
+      "view_qr": [
+        {
+          "scan": "ESCANEAR CODIGO"
+        }
+      ],
+      "info_worker": [
+        {
+          "title": "Informacion del trabajador",
+          "first":"Nombre",
+          "last":"Apellido",
+          "phone":"Numero de telefono",
+          "address":"Direccion",
+          "transport":"Transporte",
+          "days":"Dias de trabajo",
+          "trades":"Oficios",
+          "tools":"Herramientas",
+          "accept":"Aceptar",
+          "cancel":"cancelar"
+
+        }
+      ],
+      "workers_details": [
+        {
+          "title": "Detalles de solicitud",
+          "experience":"Experiencia",
+          "quantity":"Cantidad de trabajadores",
+          "start":"Fecha de inicio",
+          "end":"Fecha final",
+          "time":"Hora de inicio",
+          "etime":"Hora de finalización",
+          "task":"Descripción de las tareas",
+          "weekdays":"Días laborables",
+          "delete":"Eliminar",
+          "workers":"Solicitar trabajadores",
+          "profile":"Ver perfil",
+          "pending":"Pendiente",
+          "accepted":"Aceptado",
+          "canceled":"Cancelado"
+
+        }
+      ],
+
+      "info_project": [
+        {
+          "name": "Nombre:",
+          "address": "Direccion:",
+          "supervisor": "Supervisor name:",
+          "phone": "Telefono del supervisor:",
+          "description": "Descripcion:",
+          "breaktime": "Descanso:",
+          "paid": "Tiempo de descanso pagado:",
+          "overtime": "Tiempo extra:"
+        }
+      ]
+    }
+  ],
+  "en": [
+    {
+      "login": [
+        {
+          "language": "English",
+          "email": "E-mail",
+          "password": "Password",
+          "facebook": "Log in with Facebook",
+          "account": "Don't have an acccount?",
+          "login": "Log In",
+          "loginFail": "Incorrect username or password",
+          "create": "Sign up",
+          "or": "Or",
+          "forgot": "Forgot your password?"
+        }
+      ],
+      "message": [
+        {
+          "loading": "Plase wait..."
+        }
+      ],
+      "signup": [
+        {
+          "singup": "Sign Up",
+          "firtsname": "First Name",
+          "lastname": "Last Name",
+          "email": "E-mail",
+          "phone": "Phone Number",
+          "password": "Password",
+          "passwordR": "repeat password",
+          "account": "Already have an account?"
+        }
+      ],
+      "confirmation": [
+        {
+          "title": "User Confirmation",
+          "resend": "Resend code?",
+          "button": "Click here",
+          "confirm": "Confirmar",
+          "text": "Type your code here"
+        }
+      ],
+      "menu": [
+        {
+          "projects": "Projects",
+          "notification": "Notifications",
+          "profile": "Profile",
+          "message": "Messages",
+          "home": "Home",
+          "qr":"ViewQr",
+          "back": "Sign out"
+        }
+      ],
+      "button": [
+        {
+          "createProject": "CREATE PROJECT",
+          "requesProject": "REQUEST WORKERS",
+          "progress":"WORK IN PROGRESS ",
+          "pending":"PENDING WORKS",
+          "completed":"works completed"
+
+        }
+      ],
+      "error_messages": [
+        {
+          "email": [
+            { "type": "required", "message": "email is required" },
+            {
+              "type": "minlength",
+              "message": "email length must be longer or equal than 6 characters"
+            },
+            {
+              "type": "maxlength",
+              "message": "email length must be lower or equal than 150 characters"
+            },
+            { "type": "pattern", "message": "please enter a valid email address" }
+          ],
+          "firstname": [
+            { "type": "required", "message": "first name is required" },
+            {
+              "type": "minlength",
+              "message": "first name length must be longer or equal than 2 characters"
+            },
+            {
+              "type": "maxlength",
+              "message": "first name length must be lower or equal than 35 characters"
+            }
+          ],
+          "lastname": [
+            { "type": "required", "message": "last name is required" },
+            {
+              "type": "minlength",
+              "message": "last name length must be longer or equal than 1 characters"
+            },
+            {
+              "type": "maxlength",
+              "message": "last name length must be lower or equal than 35 characters"
+            }
+          ],
+          "phone": [
+            { "type": "required", "message": "phone is required" },
+            {
+              "type": "minlength",
+              "message": "phone length must be longer or equal than 10 characters"
+            },
+            {
+              "type": "maxlength",
+              "message": "phone length must be lower or equal than 10 characters"
+            }
+          ],
+          "password": [
+            { "type": "required", "message": "password is required" },
+            {
+              "type": "minlength",
+              "message": "password length must be at least 8 characteres"
+            },
+            {
+              "type": "maxlength",
+              "message": "password length must be lower or equal than 35 characters"
+            }
+          ],
+          "passwordR": [
+            { "type": "required", "message": "password is required" },
+            {
+              "type": "minlength",
+              "message": "password length must be at least 8 characteres"
+            },
+            {
+              "type": "maxlength",
+              "message": "password length must be lower or equal than 35 characters"
+            }
+          ]
+        }
+      ],
+      "add_worker": [
+        {
+          "page1": [
+            {
+              "title": "Select the type of worker(s) you need?",
+              "services": [
+                {
+                  "general": "GENERAL LABOUR",
+                  "framer": "FRAMER",
+                  "finish": "FINISH CARPENTER",
+                  "concrete": "CONCRETE FORMER",
+                  "hardscaper": "HARDSCAPER",
+                  "landscaper": "LANDSCAPER",
+                  "painter": "PAINTER",
+                  "drywaller": "DRY WALLER",
+                  "asbestos": "ASBESTOS",
+                  "warehouse": "WAREHOUSE"
+                }
+              ]
+            }
+          ],
+          "page2": [
+            {
+              "title": "Select the experience level(s) for the worker(s) you need?"
+            }
+          ],
+          "page3": [
+            {
+              "title": "How Many workers do you need",
+              "quantity": "Quantity of workers"
+            }
+          ],
+          "page4": [
+            {
+              "title": "What are the task the Framer(s) will be working on?",
+              "message": "Enter worker task here. A better description helps in getting the best matched worker(s)"
+            }
+          ],
+          "page5": [
+            {
+              "title": "What is the start date for the worker(s)?",
+              "end":"What is the end date for the worker(s)?",
+              "buttons": [
+                {
+                  "select": "SELECT START DATE",
+                  "edit": "EDIT START DATE",
+                  "edit_end": "EDIT END DATE"
+                }
+              ]
+            }
+          ],
+          "page6": [
+            {
+              "select": "Select the wage you want the worker to be paid.",
+              "info":"Enter more information here..."
+            }
+          ],
+          "page7": [
+            {
+              "start_time": "What is the daily start time for the worker(s)?",
+              "buttons": [
+                {
+                  "edit": "EDIT START TIME",
+                  "edit_end": "EDIT END TIME"
+                }
+              ],
+              "end_time": "What is the daily end time for the worker(s)?"
+            }
+          ],
+          "page8": [
+            {
+              "task": "What are the tasks the",
+              "task2":"will be working on?",
+              "info":"Enter more information here..."
+            }
+          ],
+          "page9": [
+            {
+              "title": "Request Summary",
+              "skil": "Skill",
+              "experience": "Experience",
+              "quantity": "Quantity of workers",
+              "start": "Start Date",
+              "end": "End Date",
+              "week": "Weekdays",
+              "start_time": "Start Time",
+              "end_time": "End Time",
+              "project": "Project",
+              "requeriments": "Requeriments",
+              "task": "Worker Tasks"
+            }
+          ],
+          "page_end": [
+            {
+              "back": "Back",
+              "cancel": "Cancel",
+              "next": "Next",
+              "save": "Save",
+              "button": [
+                {
+                  "request": "REQUEST ANOTHER WORKER",
+                  "done": "DONE"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "new_project": [
+        {
+          "button": {
+            "cancel": "cancel",
+            "back": "back",
+            "next": "next",
+            "save": "save"
+          },
+          "page1": {
+            "name": "What is name of the project?",
+            "number": "What is the PO number of the project?",
+            "addres": "What is the address of the project?",
+            "description": "What is the project description"
+          },
+          "page2": {
+            "supervisor": "What is the Supervisor's name?",
+            "supervisor_number": "What is the Supervisor's phone number?",
+            "daily": "How much break time is given daily?",
+            "button": {
+              "minutes": "MINUTES"
+            }
+          },
+          "page3": {
+            "paid": "How much of that break time is covered or paid for?",
+            "overtime": "when is overtime pay available for workers?",
+            "project": "What pase is the project in(optional)?",
+            "button": {
+              "none": "NONE",
+              "hours": "AFTER 40 HOURS/WEEK",
+              "starting": "PRE STARTING PHASE",
+              "starting_phase": "STARTING PHASE",
+              "middle": "MIDDLE PHASE",
+              "endindg": "ENDINDG PHASE"
+            }
+          },
+          "page4": {
+            "project_end": "When will the project end(optional)?",
+            "type_project": "What type of project is it?",
+            "buttons": {
+              "less": "LESS THAN 3 MONTHS",
+              "moths": "MONTHS",
+              "more": "MORE THAN 12 MONTHS",
+              "civil": "CIVIL",
+              "commercial": "COMMERCIAL",
+              "industrial": "INDUSTRIAL",
+              "residential": "RESIDENTIAL",
+              "other": "OTHER"
+            }
+          },
+          "end_page": {
+            "name": "Name of the project:",
+            "number": "Number:",
+            "addres": "Addres:",
+            "supervisor_name": "Supervisor Name:",
+            "description": "Description of the project:",
+            "total": "Total Break Time:",
+            "paid": "Paid Break Time:",
+            "overtime": "Overtime:",
+            "project_type": "Project Type:",
+            "project_phase": "Project Phase:",
+            "Project_length": "Project Length:"
+          }
+        }
+      ],"project_details": [
+        {
+          "title": "Request details",
+          "name": "Name:",
+          "address": "Address:",
+          "supervisor": "Supervisor",
+          "phone": "Supervisor phone:",
+          "description": "Description:",
+          "breaktime": "Break time:",
+          "bpaid": "Paid break time:",
+          "paid":"Paid break time",
+          "break":"BreakTime",
+          "overtime": "Overtime:",
+          "experience": "Experience",
+          "request": "Requested Workers",
+          "quantity": "Quantity workers",
+          "status":"Status",
+          "task":"Task Description",
+          "delete": "Delete",
+          "save": "save",
+          "activate":"Activate work",
+          "finish":"Finish work"
+        }
+      ],
+      "request_worker": [
+        {
+          "title": "Request Worker"
+        }
+      ],
+      "profile": [
+        {
+          "title": "Profile",
+          "company":"Company",
+          "personal":"Personal Info",
+          "documents":"Documents",
+          "view": "View Document",
+          "document":"Document",
+          "delete": "Are you sure you want to permanently delete this file?"
+
+        }
+      ],
+      "edit_company": [
+        {
+          "title": "Edit Company",
+          "save":"save",
+          "image":"Image is required",
+          "name":"Name",
+          "description":"Description",
+          "phone":"Phone number",
+          "email":"Email",
+          "rfc":"RFC",
+          "rs":"RS",
+          "address":"Address"
+        }
+      ],
+      "edit_user": [
+        {
+          "title": "Edit profile",
+          "save":"save",
+          "image":"Profile image",
+          "rimage":"profile image is required",
+          "fname":"First name",
+          "lname":"Last Name",
+          "phone":"Phone number",
+          "email":"Email",
+          "address":"Address",
+          "document":"Add document",
+          "rdocument":"Document is required"
+        }
+      ],
+      "notifications": [
+        {
+          "verify": "Verify worker hours weekly",
+          "cant":" you can't verify the hours of all workers on every project here",
+          "no":"NO NOTIFICATIONS AT THIS TIME"
+        }
+      ],
+      "password": [
+        {
+          "email": "e-mail",
+          "send":"Send email",
+          "code":"Code",
+          "new":"New password",
+          "change":"Change password"
+        }
+      ],
+      "add_company": [
+        {
+          "add": "Add Company",
+          "name":"Company name",
+          "description":"Description",
+          "Continue":"Continue"
+        }
+      ],
+      "view_qr": [
+        {
+          "scan": "SCANCODE"
+        }
+      ],
+      "info_worker": [
+        {
+          "title": "Worker detail",
+          "first":"First name",
+          "last":"Last name",
+          "phone":"Phone number",
+          "address":"Address",
+          "transport":"Transport",
+          "days":"Workying days",
+          "trades":"Trades",
+          "tools":"Tools",
+          "accept":"Accept",
+          "cancel":"cancel"
+
+        }
+      ],
+
+      "workers_details": [
+        {
+          "title": "Request details",
+          "experience":"Experience",
+          "quantity":"Quantity workers",
+          "start":"Start date",
+          "end":"End date",
+          "time":"Start time",
+          "etime":"End time",
+          "task":"Task description",
+          "weekdays":"Weekdays",
+          "delete":"Delete",
+          "workers":"Requested workers",
+          "profile":"View profile",
+          "pending":"Pending",
+          "accepted":"Accepted",
+          "canceled":"Canceled"
+
+        }
+      ],
+
+      "info_project": [
+        {
+          "name": "Name:",
+          "address": "Address:",
+          "supervisor": "Supervisor name:",
+          "phone": "Supervisor phone:",
+          "description": "Description:",
+          "breaktime": "Break time:",
+          "paid": "Paid break time:",
+          "overtime": "Overtime:"
+        }
+      ]
+    }
+  ]
+}
